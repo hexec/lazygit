@@ -465,13 +465,16 @@ func (gui *Gui) Run() error {
 		return err
 	}
 
-	if !gui.Config.GetUserConfig().DisableStartupPopups {
-		popupTasks := []func(chan struct{}) error{}
-		storedPopupVersion := gui.Config.GetAppState().StartupPopupVersion
-		if storedPopupVersion < StartupPopupVersion {
-			popupTasks = append(popupTasks, gui.showIntroPopupMessage)
+	// TODO: REMOVE THIS
+	if false {
+		if !gui.Config.GetUserConfig().DisableStartupPopups {
+			popupTasks := []func(chan struct{}) error{}
+			storedPopupVersion := gui.Config.GetAppState().StartupPopupVersion
+			if storedPopupVersion < StartupPopupVersion {
+				popupTasks = append(popupTasks, gui.showIntroPopupMessage)
+			}
+			gui.showInitialPopups(popupTasks)
 		}
-		gui.showInitialPopups(popupTasks)
 	}
 
 	gui.waitForIntro.Add(1)
