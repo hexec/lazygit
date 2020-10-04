@@ -170,6 +170,8 @@ func runLazygit(t *testing.T, replayPath string, rootDir string, record bool) {
 		)
 	}
 
+	cmd.Env = append(cmd.Env, "TERM=xterm")
+
 	f, err := pty.StartWithSize(cmd, &pty.Winsize{Rows: 100, Cols: 100})
 	assert.NoError(t, err)
 
