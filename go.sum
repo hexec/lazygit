@@ -61,8 +61,8 @@ github.com/integrii/flaggy v1.4.0 h1:A1x7SYx4jqu5NSrY14z8Z+0UyX2S5ygfJJrfolWR3zM
 github.com/integrii/flaggy v1.4.0/go.mod h1:tnTxHeTJbah0gQ6/K0RW0J7fMUBk9MCF5blhm43LNpI=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 h1:BQSFePA1RWJOlocH6Fxy8MmwDt+yVQYULKfN0RoTN8A=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99/go.mod h1:1lJo3i6rXxKeerYnT8Nvf0QmHCRC1n8sfWVwXF2Frvo=
-github.com/jesseduffield/gocui v0.3.1-0.20200930205305-1b445b9bd5da h1:I3GD+Set99tj57PgmjZJLoW6lkv0NTHadKNosJ1OKj4=
-github.com/jesseduffield/gocui v0.3.1-0.20200930205305-1b445b9bd5da/go.mod h1:2RtZznzYKt8RLRwvFiSkXjU0Ei8WwHdubgnlaYH47dw=
+github.com/jesseduffield/gocui v0.3.1-0.20201004064359-9bcbc07cec6f h1:fcqHEO3woa/FMgILtIGbZyYrA2ZkEEDxR4FFhNM4Yc8=
+github.com/jesseduffield/gocui v0.3.1-0.20201004064359-9bcbc07cec6f/go.mod h1:2RtZznzYKt8RLRwvFiSkXjU0Ei8WwHdubgnlaYH47dw=
 github.com/jesseduffield/termbox-go v0.0.0-20200823212418-a2289ed6aafe h1:qsVhCf2RFyyKIUe/+gJblbCpXMUki9rZrHuEctg6M/E=
 github.com/jesseduffield/termbox-go v0.0.0-20200823212418-a2289ed6aafe/go.mod h1:anMibpZtqNxjDbxrcDEAwSdaJ37vyUeM1f/M4uekib4=
 github.com/jesseduffield/yaml v2.1.0+incompatible h1:HWQJ1gIv2zHKbDYNp0Jwjlj24K8aqpFHnMCynY1EpmE=

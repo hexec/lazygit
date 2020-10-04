@@ -18,8 +18,8 @@ require (
 	github.com/google/go-cmp v0.3.1 // indirect
 	github.com/imdario/mergo v0.3.11
 	github.com/integrii/flaggy v1.4.0
-	github.com/jesseduffield/gocui v0.3.1-0.20200930205305-1b445b9bd5da
-	github.com/jesseduffield/termbox-go v0.0.0-20200823212418-a2289ed6aafe // indirect
+	github.com/jesseduffield/gocui v0.3.1-0.20201004064359-9bcbc07cec6f
+	github.com/jesseduffield/termbox-go v0.0.0-20200823212418-a2289ed6aafe
 	github.com/jesseduffield/yaml v2.1.0+incompatible
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
