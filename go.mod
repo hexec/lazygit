@@ -3,7 +3,6 @@ module github.com/jesseduffield/lazygit
 go 1.14
 
 require (
-	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/OpenPeeDeeP/xdg v1.0.0
 	github.com/atotto/clipboard v0.1.2
 	github.com/aybabtme/humanlog v0.4.1
@@ -17,6 +16,7 @@ require (
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/google/go-cmp v0.3.1 // indirect
+	github.com/imdario/mergo v0.3.11
 	github.com/integrii/flaggy v1.4.0
 	github.com/jesseduffield/gocui v0.3.1-0.20200930205305-1b445b9bd5da
 	github.com/jesseduffield/termbox-go v0.0.0-20200823212418-a2289ed6aafe // indirect
@@ -26,7 +26,6 @@ require (
 	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/mattn/go-runewidth v0.0.9
 	github.com/mgutz/str v1.2.0
-	github.com/nicksnyder/go-i18n/v2 v2.0.3
 	github.com/onsi/ginkgo v1.10.3 // indirect
 	github.com/onsi/gomega v1.7.1 // indirect
 	github.com/sirupsen/logrus v1.4.2
@@ -34,6 +33,4 @@ require (
 	github.com/stretchr/testify v1.4.0
 	github.com/tcnksm/go-gitconfig v0.1.2
 	golang.org/x/sys v0.0.0-20200923182605-d9f96fdee20d // indirect
-	golang.org/x/text v0.3.2
-	gopkg.in/yaml.v2 v2.2.7 // indirect
 )
