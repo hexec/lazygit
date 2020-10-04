@@ -2,12 +2,14 @@ package gui
 
 import (
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"testing"
 
+	"github.com/creack/pty"
 	"github.com/jesseduffield/lazygit/pkg/commands/oscommands"
 	"github.com/stretchr/testify/assert"
 )
@@ -167,8 +169,14 @@ func runLazygit(t *testing.T, replayPath string, rootDir string, record bool) {
 			fmt.Sprintf("REPLAY_EVENTS_FROM=%s", replayPath),
 		)
 	}
-	err := osCommand.RunExecutable(cmd)
+
+	f, err := pty.StartWithSize(cmd, &pty.Winsize{Rows: 100, Cols: 100})
 	assert.NoError(t, err)
+
+	io.Copy(os.Stdout, f)
+
+	// _, err = ioutil.ReadAll(f)
+	// assert.NoError(t, err)
 }
 
 func prepareIntegrationTestDir() {
