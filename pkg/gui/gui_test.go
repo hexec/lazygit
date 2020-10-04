@@ -34,6 +34,23 @@ type integrationTest struct {
 	fixture string
 }
 
+func tests() []integrationTest {
+	return []integrationTest{
+		{
+			name:    "commit",
+			fixture: "newFile",
+		},
+		{
+			name:    "squash",
+			fixture: "manyCommits",
+		},
+		{
+			name:    "patchBuilding",
+			fixture: "updatedFile",
+		},
+	}
+}
+
 func generateSnapshot(t *testing.T) string {
 	osCommand := oscommands.NewDummyOSCommand()
 	cmd := `sh -c "git status; cat ./*; git log --pretty=%B -p"`
@@ -59,20 +76,7 @@ func findOrCreateDir(path string) {
 }
 
 func Test(t *testing.T) {
-	tests := []integrationTest{
-		{
-			name:    "commit",
-			fixture: "newFile",
-		},
-		{
-			name:    "squash",
-			fixture: "manyCommits",
-		},
-		{
-			name:    "patchBuilding",
-			fixture: "updatedFile",
-		},
-	}
+	tests := tests()
 
 	gotoRootDirectory()
 
@@ -99,7 +103,7 @@ func Test(t *testing.T) {
 			assert.NoError(t, err)
 
 			record := os.Getenv("RECORD_EVENTS") != ""
-			runLazygit(t, replayPath, record)
+			runLazygit(t, replayPath, rootDir, record)
 
 			updateSnapshot := record || os.Getenv("UPDATE_SNAPSHOT") != ""
 
@@ -148,12 +152,12 @@ func gotoRootDirectory() {
 	}
 }
 
-func runLazygit(t *testing.T, replayPath string, record bool) {
+func runLazygit(t *testing.T, replayPath string, rootDir string, record bool) {
 	osCommand := oscommands.NewDummyOSCommand()
 
 	var cmd *exec.Cmd
 	if record {
-		cmd = osCommand.ExecutableFromString("lazygit")
+		cmd = osCommand.ExecutableFromString(fmt.Sprintf("go run %s", filepath.Join(rootDir, "main.go")))
 		cmd.Env = append(
 			cmd.Env,
 			fmt.Sprintf("RECORD_EVENTS_TO=%s", replayPath),
