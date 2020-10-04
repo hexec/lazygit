@@ -226,7 +226,7 @@ func loadAppState() (*AppState, error) {
 	}
 
 	appStateBytes, err := ioutil.ReadFile(filepath)
-	if err != nil {
+	if err != nil && !os.IsNotExist(err) { {
 		return nil, err
 	}
 
