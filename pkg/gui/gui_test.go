@@ -155,15 +155,13 @@ func gotoRootDirectory() {
 func runLazygit(t *testing.T, replayPath string, rootDir string, record bool) {
 	osCommand := oscommands.NewDummyOSCommand()
 
-	var cmd *exec.Cmd
+	cmd := osCommand.ExecutableFromString(fmt.Sprintf("go run %s", filepath.Join(rootDir, "main.go")))
 	if record {
-		cmd = osCommand.ExecutableFromString(fmt.Sprintf("go run %s", filepath.Join(rootDir, "main.go")))
 		cmd.Env = append(
 			cmd.Env,
 			fmt.Sprintf("RECORD_EVENTS_TO=%s", replayPath),
 		)
 	} else {
-		cmd = osCommand.ExecutableFromString("lazygit")
 		cmd.Env = append(
 			cmd.Env,
 			fmt.Sprintf("REPLAY_EVENTS_FROM=%s", replayPath),
